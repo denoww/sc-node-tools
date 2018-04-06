@@ -1,5 +1,5 @@
 {
-  "name": "sc-util",
+  "name": "sc-node-tools",
   "version": "1.0.1",
   "description": "tools node",
   "main": "index.js",
