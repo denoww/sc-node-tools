@@ -6,7 +6,7 @@
 # scPrint.success('Caution')
 ############# HOW TO USE ###############
 
-global.scPrint.il =
+global.scPrint =
   error:   (msg) -> _print msg, color: 'red'
   warning: (msg) -> _print msg, color: 'yellow'
   info:    (msg) -> _print msg, color: 'cian'
