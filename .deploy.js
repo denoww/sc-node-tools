@@ -8,7 +8,6 @@ process.argv.forEach( function(arg) {
   if (patt.test(arg)) { argsObj[arg.replace(/=\S+/, '')] = arg.replace(patt, ''); }
 })
 
-
 // Para fazer deploy precisamos de uma tag
 if ( ! argsObj.tag ) { return console.error("ERROR: atualize a versão para deploy -- tag=x.x.x\n") }
 
@@ -17,14 +16,18 @@ if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu 
 
 // ======= Comunicando com o 'system' para execultar os comandos de publish e git push
 
+
 const { exec } = require('child_process')
 
-var commands = [
+var
+  branch = argsObj.branch || 'master';
+  commands = [
   // Update git
   "git add .",
   "git commit -m " + argsObj.msg,
-  "git push",
+  "git push origin " + branch,
   "git tag " + argsObj.tag,
+  "git push origin master",
 
   // Publish npm
   "npm version " + argsObj.tag,
