@@ -2,17 +2,18 @@
 
 var patt,
     argsObj = {};
-    argsKeys = ['tag'];
 
 process.argv.forEach( function(arg) {
-  argsKeys.forEach( function(argKey) {
-    patt = RegExp(argKey+"=");
-    if (patt.test(arg)) { argsObj[argKey] = arg.replace(patt, ''); }
-  })
+  patt = /^\w+=/;
+  if (patt.test(arg)) { argsObj[arg.replace(/=\S+/, '')] = arg.replace(patt, ''); }
 })
 
+
 // Para fazer deploy precisamos de uma tag
-if ( ! argsObj.tag ) { return console.error('ERROR: atualize a versão para deploy -- tag=x.x.x') }
+if ( ! argsObj.tag ) { return console.error("ERROR: atualize a versão para deploy -- tag=x.x.x\n") }
+
+// Para fazer deploy precisamos de uma tag
+if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu commit -- msg=Atualizando git\n") }
 
 // ======= Comunicando com o 'system' para execultar os comandos de publish e git push
 
@@ -20,10 +21,10 @@ const { exec } = require('child_process')
 
 var commands = [
   // Update git
-  "git tag " + argsObj.tag,
   "git add .",
-  "git commit",
+  "git commit -m " + argsObj.msg,
   "git push",
+  "git tag " + argsObj.tag,
 
   // Publish npm
   "npm version " + argsObj.tag,
@@ -39,6 +40,7 @@ execCommands = function(commands){
     if (error === null) return execCommands(commands);
 
     console.log(`\n${error}`);
+    console.log(`\n${stdout}`);
     console.log("ERROR: Deploy falhou\n");
   })
 }
