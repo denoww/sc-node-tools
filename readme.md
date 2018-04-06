@@ -25,5 +25,5 @@ Logando no npm:
 Usando npm script:
 
 <pre>
-  $ npm run sc:deploy -- tag=x.x.x msg=Commit Message
+  $ npm run sc:deploy -- tag=x.x.x msg='Commit Message'
 </pre>

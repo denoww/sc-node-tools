@@ -4,8 +4,8 @@ var patt,
     argsObj = {};
 
 process.argv.forEach( function(arg) {
-  patt = /^\w+=/;
-  if (patt.test(arg)) { argsObj[arg.replace(/=\S+/, '')] = arg.replace(patt, ''); }
+  patt = /\w+=/;
+  if (patt.test(arg)) { argsObj[arg.replace(/=(.*)/, '')] = arg.replace(patt, ''); }
 })
 
 // Para fazer deploy precisamos de uma tag
@@ -23,7 +23,7 @@ var
   commands = [
   // Update git
   "git add .",
-  "git commit -m " + argsObj.msg,
+  "git commit -m '" + argsObj.msg + "'",
   "git push origin " + branch,
   "git tag " + argsObj.tag,
   "git push origin " + argsObj.tag,
