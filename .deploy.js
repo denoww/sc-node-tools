@@ -26,24 +26,27 @@ if ( ! argsObj.tag ) {
 }
 
 // Para fazer deploy precisamos de uma tag
-if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu commit -- msg=Atualizando git\n") }
+// if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu commit -- msg=Atualizando git\n") }
 
 // ======= Comunicando com o 'system' para execultar os comandos de publish e git push
 
 var
   branch = argsObj.branch || 'master';
-  commands = [
-    // Update git
-    "git add .",
-    "git commit -m '" + argsObj.msg + "'",
-    "git push origin " + branch,
-    "git tag " + argsObj.tag,
-    "git push origin " + argsObj.tag,
+  commands = [];
 
-    // Publish npm
-    "npm version " + argsObj.tag,
-    "npm publish",
-  ];
+if ( argsObj.msg ) {
+  commands.push("git add .")
+  commands.push("git commit -m '" + argsObj.msg + "'")
+  commands.push("git push origin " + branch)
+  commands.push("git tag " + argsObj.tag)
+  commands.push("git push origin " + argsObj.tag)
+}
+
+// Publish npm
+commands.push("npm version " + argsObj.tag)
+commands.push("npm publish")
+
+commands.commands
 
 execCommands = function(commands){
   if ( commands.length === 0 ) { return console.log("\nDeploy realizado com sucesso\n"); }
