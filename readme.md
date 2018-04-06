@@ -16,7 +16,13 @@ No npm:
 
 <h1>Atualizando pacote</h1>
 
-Usando npm script
+Logando no npm:
+
+<pre>
+  npm login
+</pre>
+
+Usando npm script:
 
 <pre>
   $ npm run sc:deploy -- tag=x.x.x msg=Commit Message
