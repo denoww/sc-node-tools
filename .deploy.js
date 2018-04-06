@@ -33,17 +33,17 @@ if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu 
 var
   branch = argsObj.branch || 'master';
   commands = [
-  // Update git
-  "git add .",
-  "git commit -m '" + argsObj.msg + "'",
-  "git push origin " + branch,
-  "git tag " + argsObj.tag,
-  "git push origin " + argsObj.tag,
+    // Update git
+    "git add .",
+    "git commit -m '" + argsObj.msg + "'",
+    "git push origin " + branch,
+    "git tag " + argsObj.tag,
+    "git push origin " + argsObj.tag,
 
-  // Publish npm
-  "npm version " + argsObj.tag,
-  "npm publish",
-];
+    // Publish npm
+    "npm version " + argsObj.tag,
+    "npm publish",
+  ];
 
 execCommands = function(commands){
   if ( commands.length === 0 ) { return console.log("\nDeploy realizado com sucesso\n"); }

@@ -3,15 +3,15 @@
 Usando npm:
 
 <pre>
-  $ npm i sc-util -s
+  $ npm i sc-node-tools -s
 </pre>
 
 No npm:
 
 <pre>
-  require('sc-util')
+  require('sc-node-tools')
 
-  scPrint.info('scUtil criado com sucesso')
+  scPrint.info('scNodeTools criado com sucesso')
 </pre>
 
 <h1>Atualizando pacote</h1>
