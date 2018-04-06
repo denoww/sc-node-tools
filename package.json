@@ -1,0 +1,15 @@
+{
+  "name": "sc-util",
+  "version": "1.1.0",
+  "description": "Seu Condomínio - Ferramentas uteis para auxiliar no desenvolvimento",
+  "main": "index.js",
+  "scripts": {
+    "sc:deploy": "node .deploy.js"
+  },
+  "author": "Seu Condomínio",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.85.0",
+    "require-dir": "^1.0.0"
+  }
+}
