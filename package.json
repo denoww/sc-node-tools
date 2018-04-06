@@ -1,6 +1,6 @@
 {
   "name": "sc-node-tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "tools node",
   "main": "index.js",
   "repository": {
