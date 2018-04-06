@@ -46,8 +46,6 @@ if ( argsObj.msg ) {
 commands.push("npm version " + argsObj.tag)
 commands.push("npm publish")
 
-commands.commands
-
 execCommands = function(commands){
   if ( commands.length === 0 ) { return console.log("\nDeploy realizado com sucesso\n"); }
   var command = commands.shift();
