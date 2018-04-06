@@ -16,7 +16,6 @@ if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu 
 
 // ======= Comunicando com o 'system' para execultar os comandos de publish e git push
 
-
 const { exec } = require('child_process')
 
 var

@@ -3,6 +3,10 @@
   "version": "1.1.0",
   "description": "Seu Condomínio - Ferramentas uteis para auxiliar no desenvolvimento",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev6-seucondominio/sc-util-test"
+  },
   "scripts": {
     "sc:deploy": "node .deploy.js"
   },
