@@ -1,4 +1,5 @@
 // Deploy, validando e execultando commandos para atualizar o 'package'
+const { exec } = require('child_process')
 
 var patt,
     argsObj = {};
@@ -8,15 +9,20 @@ process.argv.forEach( function(arg) {
   if (patt.test(arg)) { argsObj[arg.replace(/=(.*)/, '')] = arg.replace(patt, ''); }
 })
 
-// Para fazer deploy precisamos de uma tag
-if ( ! argsObj.tag ) { return console.error("ERROR: atualize a versão para deploy -- tag=x.x.x\n") }
+// Para fazer deploy precisamos de uma tag e ela tem que ser maior que a versão do pacote
+if ( ! argsObj.tag ) {
+  return console.error("ERROR: atualize a versão para deploy -- tag=x.x.x\n")
+} else {
+  var currentVersion = require('./package.json').version
+  if ( parseInt(currentVersion.replace(/\./g, '')) >= parseInt(argsObj.tag.replace(/\./g, '')) ) {
+    return console.log("ERROR: Tag deve ser maior que " + currentVersion + "\n")
+  }
+}
 
 // Para fazer deploy precisamos de uma tag
 if ( ! argsObj.msg ) { return console.error("ERROR: passe uma mensagem para seu commit -- msg=Atualizando git\n") }
 
 // ======= Comunicando com o 'system' para execultar os comandos de publish e git push
-
-const { exec } = require('child_process')
 
 var
   branch = argsObj.branch || 'master';
