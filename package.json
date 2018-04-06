@@ -10,7 +10,7 @@
   "scripts": {
     "sc:deploy": "node .deploy.js"
   },
-  "author": "sc",
+  "author": "Sc",
   "license": "ISC",
   "dependencies": {
     "request": "^2.85.0",
