@@ -1,12 +1,18 @@
 // Deploy, validando e execultando commandos para atualizar o 'package'
 const { exec } = require('child_process')
 
-var patt,
+var pattKey, pattValue,
     argsObj = {};
 
 process.argv.forEach( function(arg) {
-  patt = /\w+=/;
-  if (patt.test(arg)) { argsObj[arg.replace(/=(.*)/, '')] = arg.replace(patt, ''); }
+  pattKey   = /\w+=/;
+  pattValue = /=(.*)/;
+
+  // verificando se o argumento possui /varName=/
+  if ( ! pattKey.test(arg) ) { return; }
+
+  // Guardando o valor da varName=
+  argsObj[arg.replace(pattValue, '')] = arg.replace(pattKey, '');
 })
 
 // Para fazer deploy precisamos de uma tag e ela tem que ser maior que a versão do pacote
