@@ -27,7 +27,7 @@ var
   "git commit -m " + argsObj.msg,
   "git push origin " + branch,
   "git tag " + argsObj.tag,
-  "git push origin master",
+  "git push origin " + argsObj.tag,
 
   // Publish npm
   "npm version " + argsObj.tag,
