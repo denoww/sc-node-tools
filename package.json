@@ -1,16 +1,16 @@
 {
   "name": "sc-util",
-  "version": "1.1.8",
-  "description": "Seu Condomínio - Ferramentas uteis para auxiliar no desenvolvimento",
+  "version": "",
+  "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dev6-seucondominio/sc-util-test"
+    "url": "https://github.com/dev6-seucondominio/sc-util"
   },
   "scripts": {
     "sc:deploy": "node .deploy.js"
   },
-  "author": "Seu Condomínio",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "request": "^2.85.0",
