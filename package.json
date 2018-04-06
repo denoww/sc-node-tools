@@ -1,16 +1,16 @@
 {
   "name": "sc-util",
   "version": "",
-  "description": "",
+  "description": "tools node",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dev6-seucondominio/sc-util"
+    "url": "https://github.com/denoww/sc-node-tools"
   },
   "scripts": {
     "sc:deploy": "node .deploy.js"
   },
-  "author": "",
+  "author": "sc",
   "license": "ISC",
   "dependencies": {
     "request": "^2.85.0",
