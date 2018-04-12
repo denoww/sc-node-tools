@@ -52,10 +52,10 @@ if ( argsObj.commitMsg ) {
 }
 
 commands.push({ line: "git push origin " + branch })
+
 commands.push({ line: "npm version " + argsObj.tag, skipOnError: true })
 commands.push({ line: "npm publish" })
 
-// commands.push({ line: "git tag v" + argsObj.tag, skipOnError: true })
 commands.push({ line: "git push origin v" + argsObj.tag, skipOnError: true })
 
 execCommands = function(commands){
