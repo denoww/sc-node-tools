@@ -8,6 +8,8 @@
 
 // Atualiznado versão
 // npm run sc:deploy -- tag=1.0.1
+// OU com referencia ao package.json
+// npm run sc:deploy
 
 // Deploy, validando e execultando commandos para atualizar o 'package'
 const { exec } = require('child_process')
