@@ -8,8 +8,6 @@
 
 // Atualiznado versão
 // npm run sc:deploy -- tag=1.0.1
-// OU com referencia ao package.json
-// npm run sc:deploy
 
 // Deploy, validando e execultando commandos para atualizar o 'package'
 const { exec } = require('child_process')
@@ -55,7 +53,7 @@ if ( argsObj.commitMsg ) {
 
 commands.push({ line: "git push origin " + branch })
 commands.push({ line: "git tag v" + argsObj.tag, skipOnError: true })
-commands.push({ line: "git push origin " + argsObj.tag, skipOnError: true })
+commands.push({ line: "git push origin v" + argsObj.tag, skipOnError: true })
 
 // Publish npm
 commands.push({ line: "npm version " + argsObj.tag, skipOnError: true })
