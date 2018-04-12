@@ -6,6 +6,9 @@
 // Deploy sem commit (para caso já tiver comitado, pois o npm dará erro)
 // npm run sc:deploy
 
+// Atualiznado versão
+// npm run sc:deploy -- tag=1.0.1
+
 // Deploy, validando e execultando commandos para atualizar o 'package'
 const { exec } = require('child_process')
 
@@ -43,9 +46,8 @@ var
 
 // Git
 
-commands.push({ line: "git add .", skipOnError: true })
-
 if ( argsObj.commitMsg ) {
+  commands.push({ line: "git add .", skipOnError: true })
   commands.push({ line: "git commit -m '" + argsObj.commitMsg + "'", skipOnError: true })
 }
 

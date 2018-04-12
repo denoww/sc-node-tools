@@ -25,5 +25,12 @@ Logando no npm:
 Usando npm script:
 
 <pre>
-  $ npm run sc:deploy -- tag=x.x.x msg='Commit Message'
+  // Deploy com tag automática
+  $ npm run sc:deploy -- commitMsg='Commit Message'
+
+  // Deploy sem commit (para caso já tiver comitado, pois o npm dará erro)
+  $ npm run sc:deploy
+
+  // Atualiznado versão
+  $ npm run sc:deploy -- tag=1.0.1
 </pre>
