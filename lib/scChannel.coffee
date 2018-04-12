@@ -15,7 +15,8 @@ global.scChannel =
     req.json = params
 
     scPrint.channel("Talk #{params.channelName} params: #{JSON.stringify(params.msg)}")
-    request.post req, scErrorsHandle
+    request.post req, (error, response, body)->
+      scErrorsHandle error if error?
 
 _reqDefault =
   url: "#{ENV?.CHANNEL_URL}/talk_in_channel"
