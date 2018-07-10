@@ -52,7 +52,7 @@ Array::transform = (field, clone = false)->
   else
     @
 
-@Array::sortByField = (field, type='asc') ->
+Array::sortByField = (field, type='asc') ->
   @slice(0).sort (a, b) ->
     switch type
       when 'asc'
