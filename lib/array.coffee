@@ -52,6 +52,14 @@ Array::transform = (field, clone = false)->
   else
     @
 
+@Array::sortByField = (field, type='asc') ->
+  @slice(0).sort (a, b) ->
+    switch type
+      when 'asc'
+        if a[field] > b[field] then 1 else if a[field] < b[field] then -1 else 0
+      when 'desc'
+        if a[field] > b[field] then -1 else if a[field] < b[field] then 1 else 0
+
 Array::indexOfById = (id)->
   for el, idx in @
     return idx if el.id == id
