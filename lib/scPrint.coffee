@@ -20,6 +20,8 @@ global.scPrint =
     _print msg, type: 'channel    |', color: 'green-light'
   guarita: (msg)->
     _print msg, type: 'guarita    |', color: 'gray-light'
+  anviz: (msg)->
+    _print msg, type: 'anviz      |', color: 'red-light'
   henry: (msg)->
     _print msg, type: 'henry      |', color: 'yellow-light'
 
