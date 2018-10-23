@@ -27,7 +27,7 @@ global.scPrint =
   monitoramento: (msg)->
     _print msg, type: 'monitoram..|', color: 'blue'
   sincronizacao: (msg)->
-    _print msg, type: 'sincroniz..|', color: 'yellow'
+    _print msg, type: 'sincroniz..|', color: 'yellow-light'
 
 # private
 
