@@ -24,6 +24,10 @@ global.scPrint =
     _print msg, type: 'anviz      |', color: 'red-light'
   henry: (msg)->
     _print msg, type: 'henry      |', color: 'yellow-light'
+  monitoramento: (msg)->
+    _print msg, type: 'monitoram..|', color: 'blue'
+  sincronizacao: (msg)->
+    _print msg, type: 'sincroniz..|', color: 'yellow'
 
 # private
 
