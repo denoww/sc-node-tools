@@ -13,7 +13,7 @@
   "author": "Sc",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.85.0",
-    "require-dir": "^1.0.0"
+    "request": "^2.88.2",
+    "require-dir": "^1.2.0"
   }
 }
