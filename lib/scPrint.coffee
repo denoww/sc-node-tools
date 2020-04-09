@@ -21,7 +21,7 @@ global.scPrint =
   guarita: (msg)->
     _print msg, type: 'guarita    |', color: 'gray-light'
   anviz: (msg)->
-    _print msg, type: 'anviz      |', color: 'red-light'
+    _print msg, type: 'anviz      |', color: 'cian'
   henry: (msg)->
     _print msg, type: 'henry      |', color: 'yellow-light'
   linker: (msg)->
