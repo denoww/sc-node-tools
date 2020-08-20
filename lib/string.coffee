@@ -1,3 +1,5 @@
+# -------------------------
+# string.js
 String::removeLeadingZeros = ->
   @replace(/^0+/, '')
 
