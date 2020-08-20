@@ -44,6 +44,3 @@ Date::addYears = (value) ->
 
 Date::getDaysInMonth = ->
   Date.getDaysInMonth @getFullYear(), @getMonth()
-
-Date.getDaysInMonth = (year, month) ->
-  [31, (if anoBissexto(year) then 29 else 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month]

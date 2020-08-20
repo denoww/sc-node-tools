@@ -72,10 +72,11 @@ unless Object.clone
       when File
         copy = new File([obj], obj.name, { type: obj.type, lastModified: obj.lastModified, lastModifiedDate: obj.lastModifiedDate, })
       else
-        if {}.toString.call(obj) == '[object Object]'
+        objectCall = {}.toString.call(obj)
+        if ['[object Object]', '[object Date]'].include(objectCall)
           copy = obj
         else
-          throw new Error("Unable to copy obj of type (#{obj.constructor})! Its type isn't supported. obj: #{obj}")
+          throw new Error("Unable to copy obj of type (#{objectCall}: #{obj.constructor})! Its type isn't supported. obj: #{obj}")
 
     copy
 
