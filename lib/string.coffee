@@ -19,7 +19,7 @@ String::rjust = (width, padding) ->
     resp = @
   resp.toString()
 
-@String::removerAcentos = -> _deaccent(@)
+String::removerAcentos = -> _deaccent(@)
 
 String::camelCaseToHyphen = ->
   this.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
