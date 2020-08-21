@@ -36,6 +36,9 @@ String::toPascalCase = ->
     i++
   arr.join ""
 
+String::removeSpecialCharacters = ->
+  @.replace(/[^\w\s]/gi, '')
+
 String::extractFrom = (deepObject)->
   @split('.').extractFrom(deepObject)
 
