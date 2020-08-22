@@ -3,6 +3,9 @@
 String::removeLeadingZeros = ->
   @replace(/^0+/, '')
 
+String::toI = ->
+  parseInt @replace(",", "."), 10
+
 String::ljust = (width, padding) ->
   padding = padding or ' '
   padding = padding.substr(0, 1)
