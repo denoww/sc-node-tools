@@ -1,6 +1,7 @@
 <h1>Instalação</h1>
-
-$ git clone git@github.com:denoww/sc-node-tools.git
+    
+    $ cd ~/workspace
+    $ git clone git@github.com:denoww/sc-node-tools.git
 
 Usando npm:
 
