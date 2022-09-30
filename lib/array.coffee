@@ -20,7 +20,7 @@ Array::toOnlyArraySqlQuery = ->
       array.push "#{a}"
     else
       array.push "'#{a}'" #if a.is_a? String
-  array
+  array.unique()
 
 Array::max = ->  Math.max.apply null, @
 Array::min = ->  Math.min.apply null, @
