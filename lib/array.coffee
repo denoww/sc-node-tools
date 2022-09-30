@@ -1,5 +1,26 @@
 # -------------------------
 # array.js
+
+Array::toArraySqlQuery = ->
+  # [1, '2'].toArraySqlQuery()
+  # retorna "(1, '2')"
+  array = @.toOnlyArraySqlQuery()
+  if array.length
+    "(#{array.join(", ")})"
+  else
+    "('0')"
+
+Array::toOnlyArraySqlQuery = ->
+  # [1, '2'].toOnlyArraySqlQuery()
+  # retorna ['1', "'2'"]
+  array = []
+  @.map (a) ->
+    if isNumber(a)
+      array.push "#{a}"
+    else
+      array.push "'#{a}'" #if a.is_a? String
+  array
+
 Array::max = ->  Math.max.apply null, @
 Array::min = ->  Math.min.apply null, @
 Array::first = -> @[0]
