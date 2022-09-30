@@ -1,6 +1,7 @@
 # -------------------------
 # array.js
 
+
 Array::toArraySqlQuery = ->
   # [1, '2'].toArraySqlQuery()
   # retorna "(1, '2')"
